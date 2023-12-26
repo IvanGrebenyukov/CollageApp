@@ -85,7 +85,7 @@ class AddTeacherActivity : AppCompatActivity() {
             }
             lifecycleScope.launch(Dispatchers.IO) {
                 val fullName = binding.teacherNameEd.text.toString()
-                val newLogin = fullName.split(" ")[0].toLowerCase()
+                val newLogin = fullName.toLowerCase().replace(" ", "_")
                 val teacher = Teacher(
                     name = fullName,
                     login = newLogin,

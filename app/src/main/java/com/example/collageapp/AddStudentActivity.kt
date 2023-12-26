@@ -63,11 +63,13 @@ class AddStudentActivity : AppCompatActivity() {
                 binding.groupSpinner.adapter = newAdapter
             }
             val calendar = Calendar.getInstance()
-            val currentYear = calendar.get(Calendar.YEAR)
-            calendar.set(currentYear - 10, calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+            calendar.set(1995, Calendar.JANUARY, 1)
+            val minDate = calendar.timeInMillis
+            calendar.set(2010, Calendar.DECEMBER, 31)
             val maxDate = calendar.timeInMillis
 
             runOnUiThread {
+                binding.studentBirthdayD.minDate = minDate
                 binding.studentBirthdayD.maxDate = maxDate
             }
         }
@@ -103,11 +105,9 @@ class AddStudentActivity : AppCompatActivity() {
         val courseText = binding.courseEd.text.toString()
         val isBudget = binding.isBudgetCheckbox.isChecked
         var photoUrl = binding.photoEd.text.toString()
-//        if(photoUrl.isNullOrEmpty()){
-//            photoUrl = "no"
-//        }
 
-        if (studentName.isBlank() || groupName.isBlank() || courseText.isBlank()) {
+
+        if (studentName.isBlank() || groupName.isBlank() || courseText.isBlank() || photoUrl.isBlank()) {
 
             Toast.makeText(this, "Все поля должны быть заполнены", Toast.LENGTH_SHORT).show()
             return
@@ -121,7 +121,7 @@ class AddStudentActivity : AppCompatActivity() {
 
         lifecycleScope.launch(Dispatchers.IO) {
             val fullName = binding.studentNameEd.text.toString()
-            val newLogin = fullName.split(" ")[0].toLowerCase()
+            val newLogin = fullName.toLowerCase().replace(" ", "_")
             val student = Student(
                 name = studentName,
                 login = newLogin,

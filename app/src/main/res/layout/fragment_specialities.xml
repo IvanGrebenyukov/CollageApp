@@ -16,17 +16,20 @@
         android:textSize="40sp"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addSpecialityBt"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Добавить специальность"
-        android:layout_marginTop="50sp"
+        android:background="@drawable/buttons"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="55dp"
         android:layout_gravity="center_horizontal"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/specialitiesRecycler"
-        android:layout_marginTop="110dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="115dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

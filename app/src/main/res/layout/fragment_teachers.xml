@@ -14,17 +14,20 @@
         android:textStyle="bold"
         android:gravity="center_horizontal"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addTeacherButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Добавить преподавателя"
-        android:layout_marginTop="50dp"
+        android:background="@drawable/buttons"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="55dp"
         android:layout_gravity="center_horizontal"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teachersRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"/>
+        android:layout_marginTop="115dp"/>
 
 </FrameLayout>

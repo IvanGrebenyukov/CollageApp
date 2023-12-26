@@ -17,10 +17,13 @@
         android:textColor="@color/black"
         android:textColorHint="#AD121010"
         android:layout_marginBottom="16dp"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addSpecialityToDbBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Добавить"/>
+        android:text="Добавить"
+        android:background="@drawable/buttons"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 </LinearLayout>

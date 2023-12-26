@@ -16,11 +16,23 @@
         android:textColorHint="#AD121010"
         android:textColor="@color/black"
         android:layout_marginBottom="16sp"/>
-    <Button
-        android:id="@+id/searchStudentBt"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Искать"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/searchStudentBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Искать"/>
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:text="отменить"/>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/studentInfoRecycler"
         android:layout_width="match_parent"

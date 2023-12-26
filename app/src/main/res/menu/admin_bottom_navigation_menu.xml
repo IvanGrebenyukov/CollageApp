@@ -2,12 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_students"
-        android:title="Students" />
+        android:title="Students"
+        android:icon="@drawable/baseline_student"/>
 
     <item
         android:id="@+id/navigation_teachers"
-        android:title="Teachers" />
+        android:title="Teachers"
+        android:icon="@drawable/baseline_teacher"/>
     <item
         android:id="@+id/navigation_specialities"
-        android:title="Specialities"/>
+        android:title="Specialities"
+        android:icon="@drawable/baseline_specialty"/>
 </menu>

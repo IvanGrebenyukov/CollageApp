@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,11 +48,26 @@ class TeacherActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main){
                     adapter.setData(studentsList)
                 }
+                if(studentsList.isNullOrEmpty()){
+                    runOnUiThread{
+                        Toast.makeText(this@TeacherActivity,"Такого студента нет",Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+            binding.cancelButton.visibility = View.VISIBLE
 //            val intent = Intent(this@TeacherActivity, StudentInfoActivity::class.java)
 //            intent.putExtra("studentName", binding.searchStudentByNameEd.text.toString())
 //            startActivity(intent)
 
+        }
+        binding.cancelButton.setOnClickListener{
+            lifecycleScope.launch(Dispatchers.IO){
+                val studentsList = databaseDao.getStudentsWithSpeciality()
+                withContext(Dispatchers.Main){
+                    adapter.setAllData(studentsList)
+                }
+            }
+            binding.cancelButton.visibility = View.INVISIBLE
         }
     }
 }

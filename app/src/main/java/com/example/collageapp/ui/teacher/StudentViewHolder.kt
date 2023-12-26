@@ -24,17 +24,11 @@ class StudentViewHolder(
         studentBirthdayTextView.text = "Дата рождения:${studentWithSpeciality.student.birthday}"
         studentCoursesTextView.text = "Курс: ${studentWithSpeciality.student.course}"
         studentSpeciality.text = "Специальность: ${studentWithSpeciality.studentSpeciality}"
-        if(studentWithSpeciality.student.photo.isNullOrEmpty()){
-            studentWithSpeciality.student.photo = "no"
-            Picasso.get()
-                .load(studentWithSpeciality.student.photo)
-                .placeholder(R.drawable.placeholder_poster)
-                .error(R.drawable.placeholder_poster)
-                .into(studentImage)
-        }
-        else{
-
-        }
+        Picasso.get()
+            .load(studentWithSpeciality.student.photo)
+            .placeholder(R.drawable.placeholder_poster)
+            .error(R.drawable.placeholder_poster)
+            .into(studentImage)
 
         if(studentWithSpeciality.student.isBudget){
             budgetTextView.text = "Бюджет: Да"

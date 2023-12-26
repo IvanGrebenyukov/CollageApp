@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collageapp.R
+import com.example.collageapp.database.StudentWithSpeciality
 import com.example.collageapp.database.Teacher
 
 class TeachersAdapter: RecyclerView.Adapter<TeachersViewHolder>() {
@@ -25,6 +26,11 @@ class TeachersAdapter: RecyclerView.Adapter<TeachersViewHolder>() {
     fun setData(newTeachers: List<Teacher>) {
         teachersList = newTeachers
         notifyDataSetChanged()
+    }
+    fun setAllData(newStudents: List<Teacher>){
+        teachersList = newStudents
+        notifyDataSetChanged()
+
     }
     fun getTeachersList(): List<Teacher> {
         return teachersList
