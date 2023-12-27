@@ -30,10 +30,9 @@ class TeacherViewHolder(
     fun bind(
         teacher: Teacher,
         position: Int,
-        allTeachers: List<Teacher> // Добавляем список всех преподавателей
+        allTeachers: List<Teacher>
     ) {
         teacherNameTextView.text = "Преподаватель: ${teacher.name}"
-        // Считаем общее количество часов для всех специальностей и умножаем на 200
         var totalHours = 0
         for(item in allTeachers){
             if(teacher.name==item.name)

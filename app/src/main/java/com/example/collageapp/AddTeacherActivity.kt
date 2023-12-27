@@ -75,10 +75,11 @@ class AddTeacherActivity : AppCompatActivity() {
                     .show()
                 return
             }
-            if (binding.hoursPerYearTeacher.text.toString().toInt() < 0) {
+            if (binding.hoursPerYearTeacher.text.toString().toInt() < 0 ||
+                binding.hoursPerYearTeacher.text.toString().toInt() > 2000) {
                 Toast.makeText(
                     this@AddTeacherActivity,
-                    "Количество часов должно быть положительным",
+                    "Количество часов должно быть от 0 до 2000",
                     Toast.LENGTH_SHORT
                 ).show()
                 return

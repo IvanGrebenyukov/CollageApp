@@ -51,10 +51,11 @@ class ChangeTeacherActivity : AppCompatActivity() {
                     ).show()
                     return@setOnClickListener
                 }
-                if (binding.changeHoursPerYearTeacher.text.toString().toInt() <= 0) {
+                if (binding.changeHoursPerYearTeacher.text.toString().toInt() < 0 ||
+                    binding.changeHoursPerYearTeacher.text.toString().toInt() > 2000) {
                     Toast.makeText(
                         this@ChangeTeacherActivity,
-                        "Количество часов не может быть меньше нуля",
+                        "Количество часов должно быть от 0 до 2000",
                         Toast.LENGTH_SHORT
                     ).show()
                     return@setOnClickListener
